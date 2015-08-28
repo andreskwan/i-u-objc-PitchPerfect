@@ -30,4 +30,8 @@
     //TODO: Record the user's voice
     
 }
+
+- (IBAction)stopRecord:(UIButton *)sender {
+    self.recordLabel.hidden = YES;
+}
 @end

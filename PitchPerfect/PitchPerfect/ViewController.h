@@ -11,6 +11,7 @@
 @interface ViewController : UIViewController
 
 - (IBAction)recordAudio:(UIButton *)sender;
+- (IBAction)stopRecord:(UIButton *)sender;
 
 @end
 
