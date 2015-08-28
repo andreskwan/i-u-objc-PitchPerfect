@@ -9,6 +9,7 @@
 #import "ViewController.h"
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *recordLabel;
 
 @end
 
@@ -17,11 +18,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    self.recordLabel.hidden = YES;
+    
 }
 
 
 - (IBAction)recordAudio:(UIButton *)sender {
     //TODO: Show text "recording in progress"
+    self.recordLabel.hidden = NO;
+    self.recordLabel.text = @"recording in progress";
     //TODO: Record the user's voice
     
 }

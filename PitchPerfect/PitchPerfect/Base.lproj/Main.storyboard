@@ -40,6 +40,9 @@
                             <constraint firstAttribute="centerX" secondItem="XfV-nS-ARG" secondAttribute="centerX" id="llx-AB-IC7"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="recordLabel" destination="mfh-He-Gv1" id="yeh-5D-Qkf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
