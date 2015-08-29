@@ -10,6 +10,8 @@
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *recordLabel;
+@property (weak, nonatomic) IBOutlet UIButton *stopButton;
+@property (weak, nonatomic) IBOutlet UIButton *recordButton;
 
 @end
 
@@ -18,14 +20,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
     self.recordLabel.hidden = YES;
-    
+    self.stopButton.hidden  = YES;
+    self.recordButton.enabled = YES;
 }
 
 
 - (IBAction)recordAudio:(UIButton *)sender {
-    //TODO: Show text "recording in progress"
     self.recordLabel.hidden = NO;
+    self.stopButton.hidden  = NO;
+    self.recordButton.enabled = NO;
     self.recordLabel.text = @"recording in progress";
     //TODO: Record the user's voice
     
