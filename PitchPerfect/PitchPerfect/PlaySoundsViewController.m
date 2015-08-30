@@ -10,6 +10,8 @@
 @import AVFoundation;
 
 
+static CGFloat const kAudioPlayerSpeedRate = 1.5;
+
 @interface PlaySoundsViewController ()
 @property (nonatomic, strong) AVAudioPlayer *audioPlayer;
 @end
@@ -41,7 +43,10 @@
     //TODO: identify why it is nil
     self.audioPlayer = [[AVAudioPlayer alloc]initWithContentsOfURL:urlPath
                                                              error:&error];
-    //TODO:handle this error - read
+    self.audioPlayer.enableRate = YES;
+    self.audioPlayer.rate = kAudioPlayerSpeedRate;
+
+    //TODO:handle errors - read
     //https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/ErrorHandlingCocoa/ErrorHandling/ErrorHandling.html#//apple_ref/doc/uid/TP40001806-CH201-SW1
     if (!error) {
         
