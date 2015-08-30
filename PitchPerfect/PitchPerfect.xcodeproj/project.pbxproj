@@ -14,6 +14,7 @@
 		EA354F731B90225500CDA4DE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA354F721B90225500CDA4DE /* Images.xcassets */; };
 		EA354F761B90225500CDA4DE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA354F741B90225500CDA4DE /* LaunchScreen.xib */; };
 		EA354F821B90225500CDA4DE /* PitchPerfectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EA354F811B90225500CDA4DE /* PitchPerfectTests.m */; };
+		EA5286D21B9362860041BEFC /* PlaySoundsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA5286D11B9362860041BEFC /* PlaySoundsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		EA354F7B1B90225500CDA4DE /* PitchPerfectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PitchPerfectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA354F801B90225500CDA4DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA354F811B90225500CDA4DE /* PitchPerfectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PitchPerfectTests.m; sourceTree = "<group>"; };
+		EA5286D01B9362860041BEFC /* PlaySoundsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaySoundsViewController.h; sourceTree = "<group>"; };
+		EA5286D11B9362860041BEFC /* PlaySoundsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaySoundsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +90,8 @@
 				EA354F6D1B90225500CDA4DE /* ViewController.m */,
 				EA354F6F1B90225500CDA4DE /* Main.storyboard */,
 				EA354F721B90225500CDA4DE /* Images.xcassets */,
+				EA5286D01B9362860041BEFC /* PlaySoundsViewController.h */,
+				EA5286D11B9362860041BEFC /* PlaySoundsViewController.m */,
 				EA354F741B90225500CDA4DE /* LaunchScreen.xib */,
 				EA354F651B90225500CDA4DE /* Supporting Files */,
 			);
@@ -221,6 +226,7 @@
 			files = (
 				EA354F6E1B90225500CDA4DE /* ViewController.m in Sources */,
 				EA354F6B1B90225500CDA4DE /* AppDelegate.m in Sources */,
+				EA5286D21B9362860041BEFC /* PlaySoundsViewController.m in Sources */,
 				EA354F681B90225500CDA4DE /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -416,6 +422,7 @@
 				EA354F871B90225500CDA4DE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EA354F881B90225500CDA4DE /* Build configuration list for PBXNativeTarget "PitchPerfectTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +431,7 @@
 				EA354F8A1B90225500CDA4DE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
