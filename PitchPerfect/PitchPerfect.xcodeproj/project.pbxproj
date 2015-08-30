@@ -15,6 +15,7 @@
 		EA354F761B90225500CDA4DE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA354F741B90225500CDA4DE /* LaunchScreen.xib */; };
 		EA354F821B90225500CDA4DE /* PitchPerfectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EA354F811B90225500CDA4DE /* PitchPerfectTests.m */; };
 		EA5286D21B9362860041BEFC /* PlaySoundsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA5286D11B9362860041BEFC /* PlaySoundsViewController.m */; };
+		EA5286D41B936A990041BEFC /* movie_quote.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EA5286D31B936A990041BEFC /* movie_quote.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,7 @@
 		EA354F811B90225500CDA4DE /* PitchPerfectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PitchPerfectTests.m; sourceTree = "<group>"; };
 		EA5286D01B9362860041BEFC /* PlaySoundsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaySoundsViewController.h; sourceTree = "<group>"; };
 		EA5286D11B9362860041BEFC /* PlaySoundsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaySoundsViewController.m; sourceTree = "<group>"; };
+		EA5286D31B936A990041BEFC /* movie_quote.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = movie_quote.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		EA354F651B90225500CDA4DE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EA5286D31B936A990041BEFC /* movie_quote.mp3 */,
 				EA354F661B90225500CDA4DE /* Info.plist */,
 				EA354F671B90225500CDA4DE /* main.m */,
 			);
@@ -206,6 +209,7 @@
 			files = (
 				EA354F711B90225500CDA4DE /* Main.storyboard in Resources */,
 				EA354F761B90225500CDA4DE /* LaunchScreen.xib in Resources */,
+				EA5286D41B936A990041BEFC /* movie_quote.mp3 in Resources */,
 				EA354F731B90225500CDA4DE /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
