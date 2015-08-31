@@ -78,22 +78,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="asU-2Z-3T0">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="asU-2Z-3T0">
                                 <rect key="frame" x="46" y="114" width="100" height="100"/>
                                 <state key="normal" image="slow">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="playSlowButton:" destination="FY7-XN-nz1" eventType="touchUpInside" id="EO0-6t-9TA"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tn8-xg-Dgr">
-                                <rect key="frame" x="454" y="114" width="100" height="100"/>
-                                <state key="normal" image="fast">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="playFastButton:" destination="FY7-XN-nz1" eventType="touchUpInside" id="qP7-ZG-zay"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f0B-b1-ybk">
@@ -105,16 +96,24 @@
                                     <action selector="stopButton:" destination="FY7-XN-nz1" eventType="touchUpInside" id="P96-fa-iMh"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tn8-xg-Dgr">
+                                <rect key="frame" x="454" y="114" width="100" height="100"/>
+                                <state key="normal" image="fast">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playFastButton:" destination="FY7-XN-nz1" eventType="touchUpInside" id="qP7-ZG-zay"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="asU-2Z-3T0" firstAttribute="leading" relation="lessThanOrEqual" secondItem="mHC-5p-Y8H" secondAttribute="leadingMargin" constant="30" id="20K-0g-H8y"/>
-                            <constraint firstItem="4Z7-MT-2Oe" firstAttribute="top" secondItem="f0B-b1-ybk" secondAttribute="bottom" constant="63" id="5Uw-vv-J2u"/>
-                            <constraint firstItem="tn8-xg-Dgr" firstAttribute="top" secondItem="Iou-jn-8wr" secondAttribute="bottom" constant="50" id="Cr2-O2-Swx"/>
-                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="tn8-xg-Dgr" secondAttribute="trailing" constant="30" id="Hrh-cz-Rpw"/>
-                            <constraint firstItem="asU-2Z-3T0" firstAttribute="top" secondItem="Iou-jn-8wr" secondAttribute="bottom" constant="50" id="OJr-m8-sb9"/>
-                            <constraint firstAttribute="centerX" secondItem="f0B-b1-ybk" secondAttribute="centerX" id="YVf-Bk-dc9"/>
-                            <constraint firstItem="tn8-xg-Dgr" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="asU-2Z-3T0" secondAttribute="trailing" constant="60" id="rEa-O4-YYC"/>
+                            <constraint firstItem="f0B-b1-ybk" firstAttribute="centerX" secondItem="mHC-5p-Y8H" secondAttribute="centerX" id="7vy-4e-Neo"/>
+                            <constraint firstItem="4Z7-MT-2Oe" firstAttribute="top" secondItem="f0B-b1-ybk" secondAttribute="bottom" constant="63" id="IcX-P8-dM8"/>
+                            <constraint firstItem="asU-2Z-3T0" firstAttribute="top" secondItem="Iou-jn-8wr" secondAttribute="bottom" constant="50" id="O4P-9j-VzM"/>
+                            <constraint firstItem="tn8-xg-Dgr" firstAttribute="top" secondItem="asU-2Z-3T0" secondAttribute="top" id="Ruq-S9-phv"/>
+                            <constraint firstItem="asU-2Z-3T0" firstAttribute="leading" secondItem="mHC-5p-Y8H" secondAttribute="leadingMargin" constant="30" id="dUZ-jY-pL2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tn8-xg-Dgr" secondAttribute="trailing" constant="30" id="eMx-cE-myW"/>
                         </constraints>
                     </view>
                 </viewController>

@@ -12,6 +12,8 @@
 
 static CGFloat const kAudioPlayerFastRate = 1.5;
 static CGFloat const kAudioPlayerSlowRate = 0.5;
+static CGFloat const kAudioPlayerStartFromTheBegining = 0.0;
+
 
 @interface PlaySoundsViewController ()
 @property (nonatomic, strong) AVAudioPlayer *audioPlayer;
@@ -67,6 +69,7 @@ static CGFloat const kAudioPlayerSlowRate = 0.5;
 - (void)playAudioWithSpeedRate:(CGFloat)audioRate
 {
     self.audioPlayer.rate = audioRate;
+    self.audioPlayer.currentTime = kAudioPlayerStartFromTheBegining;
     [self.audioPlayer stop];
     [self.audioPlayer play];
 }
