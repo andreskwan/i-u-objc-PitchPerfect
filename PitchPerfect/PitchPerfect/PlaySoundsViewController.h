@@ -10,5 +10,7 @@
 
 @interface PlaySoundsViewController : UIViewController
 - (IBAction)playSlowButton:(UIButton *)sender;
+- (IBAction)playFastButton:(UIButton *)sender;
+- (IBAction)stopButton:(UIButton *)sender;
 
 @end

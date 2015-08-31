@@ -47,11 +47,11 @@
                         <constraints>
                             <constraint firstItem="mfh-He-Gv1" firstAttribute="top" secondItem="XfV-nS-ARG" secondAttribute="bottom" id="9tk-od-GUI"/>
                             <constraint firstAttribute="centerX" secondItem="XfV-nS-ARG" secondAttribute="centerX" id="FXE-Yh-FRn"/>
-                            <constraint firstAttribute="centerY" secondItem="nhR-H2-j0r" secondAttribute="centerY" constant="-212" id="H1G-h4-oU1"/>
                             <constraint firstAttribute="centerY" secondItem="XfV-nS-ARG" secondAttribute="centerY" constant="10" id="K4S-MH-mMV"/>
                             <constraint firstAttribute="centerX" secondItem="mfh-He-Gv1" secondAttribute="centerX" constant="-0.5" id="NWN-cX-TgG"/>
-                            <constraint firstItem="nhR-H2-j0r" firstAttribute="top" secondItem="mfh-He-Gv1" secondAttribute="bottom" constant="100" id="grY-hb-STZ"/>
+                            <constraint firstItem="nhR-H2-j0r" firstAttribute="top" relation="lessThanOrEqual" secondItem="mfh-He-Gv1" secondAttribute="bottom" constant="100" id="grY-hb-STZ"/>
                             <constraint firstAttribute="centerY" secondItem="mfh-He-Gv1" secondAttribute="centerY" constant="-80" id="kiw-gK-ITf"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="nhR-H2-j0r" secondAttribute="bottom" constant="63" id="u2u-dZ-H8f"/>
                             <constraint firstAttribute="centerX" secondItem="nhR-H2-j0r" secondAttribute="centerX" id="zDU-JT-zUT"/>
                         </constraints>
                     </view>
@@ -78,7 +78,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="asU-2Z-3T0">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="asU-2Z-3T0">
                                 <rect key="frame" x="46" y="114" width="100" height="100"/>
                                 <state key="normal" image="slow">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -87,11 +87,34 @@
                                     <action selector="playSlowButton:" destination="FY7-XN-nz1" eventType="touchUpInside" id="EO0-6t-9TA"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tn8-xg-Dgr">
+                                <rect key="frame" x="454" y="114" width="100" height="100"/>
+                                <state key="normal" image="fast">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playFastButton:" destination="FY7-XN-nz1" eventType="touchUpInside" id="qP7-ZG-zay"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f0B-b1-ybk">
+                                <rect key="frame" x="275" y="487" width="50" height="50"/>
+                                <state key="normal" image="stop">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="stopButton:" destination="FY7-XN-nz1" eventType="touchUpInside" id="P96-fa-iMh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="asU-2Z-3T0" firstAttribute="leading" secondItem="mHC-5p-Y8H" secondAttribute="leadingMargin" constant="30" id="20K-0g-H8y"/>
+                            <constraint firstItem="asU-2Z-3T0" firstAttribute="leading" relation="lessThanOrEqual" secondItem="mHC-5p-Y8H" secondAttribute="leadingMargin" constant="30" id="20K-0g-H8y"/>
+                            <constraint firstItem="4Z7-MT-2Oe" firstAttribute="top" secondItem="f0B-b1-ybk" secondAttribute="bottom" constant="63" id="5Uw-vv-J2u"/>
+                            <constraint firstItem="tn8-xg-Dgr" firstAttribute="top" secondItem="Iou-jn-8wr" secondAttribute="bottom" constant="50" id="Cr2-O2-Swx"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="tn8-xg-Dgr" secondAttribute="trailing" constant="30" id="Hrh-cz-Rpw"/>
                             <constraint firstItem="asU-2Z-3T0" firstAttribute="top" secondItem="Iou-jn-8wr" secondAttribute="bottom" constant="50" id="OJr-m8-sb9"/>
+                            <constraint firstAttribute="centerX" secondItem="f0B-b1-ybk" secondAttribute="centerX" id="YVf-Bk-dc9"/>
+                            <constraint firstItem="tn8-xg-Dgr" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="asU-2Z-3T0" secondAttribute="trailing" constant="60" id="rEa-O4-YYC"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -119,6 +142,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="fast" width="100" height="100"/>
         <image name="microphone" width="100" height="100"/>
         <image name="slow" width="100" height="100"/>
         <image name="stop" width="50" height="50"/>

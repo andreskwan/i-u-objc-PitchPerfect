@@ -10,7 +10,8 @@
 @import AVFoundation;
 
 
-static CGFloat const kAudioPlayerSpeedRate = 1.5;
+static CGFloat const kAudioPlayerFastRate = 1.5;
+static CGFloat const kAudioPlayerSlowRate = 0.5;
 
 @interface PlaySoundsViewController ()
 @property (nonatomic, strong) AVAudioPlayer *audioPlayer;
@@ -29,11 +30,20 @@ static CGFloat const kAudioPlayerSpeedRate = 1.5;
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark buttons logic
 - (IBAction)playSlowButton:(UIButton *)sender {
-    [self.audioPlayer play];
+    [self playAudioWithSpeedRate:kAudioPlayerSlowRate];
 }
 
-#pragma mark Audio 
+- (IBAction)playFastButton:(UIButton *)sender {
+    [self playAudioWithSpeedRate:kAudioPlayerFastRate];
+}
+
+- (IBAction)stopButton:(UIButton *)sender {
+    [self.audioPlayer stop];
+}
+
+#pragma mark AVAudio logic
 - (void)configureAudioToPlay
 {
     NSString *path = [[NSBundle mainBundle] pathForResource:@"movie_quote"
@@ -44,7 +54,6 @@ static CGFloat const kAudioPlayerSpeedRate = 1.5;
     self.audioPlayer = [[AVAudioPlayer alloc]initWithContentsOfURL:urlPath
                                                              error:&error];
     self.audioPlayer.enableRate = YES;
-    self.audioPlayer.rate = kAudioPlayerSpeedRate;
 
     //TODO:handle errors - read
     //https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/ErrorHandlingCocoa/ErrorHandling/ErrorHandling.html#//apple_ref/doc/uid/TP40001806-CH201-SW1
@@ -53,6 +62,13 @@ static CGFloat const kAudioPlayerSpeedRate = 1.5;
     }else{
         //TODO: handle error
     }
+}
+
+- (void)playAudioWithSpeedRate:(CGFloat)audioRate
+{
+    self.audioPlayer.rate = audioRate;
+    [self.audioPlayer stop];
+    [self.audioPlayer play];
 }
 
 /*
