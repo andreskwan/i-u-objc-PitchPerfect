@@ -9,6 +9,7 @@
 #import "RecordSoundViewController.h"
 @import AVFoundation;
 
+static NSString *const kAudioFileName = @"my_audio";
 static NSString *const kAudioFileExtension = @"wav";
 
 @interface RecordSoundViewController () <AVAudioRecorderDelegate>
@@ -44,9 +45,7 @@ static NSString *const kAudioFileExtension = @"wav";
     //---------Path & Name of the file
     NSString *dirPath = [NSSearchPathForDirectoriesInDomains(NSDocumentationDirectory, NSUserDomainMask, YES) firstObject];
     NSDate *currentDateTime = [NSDate new];
-    NSDateFormatter *formatter = [NSDateFormatter new];
-    formatter.dateFormat = @"MM-dd-yyyy-HH:mm:ss";
-    NSString *recordingName = [[formatter stringFromDate:currentDateTime] stringByAppendingPathExtension:kAudioFileExtension];
+    NSString *recordingName = [kAudioFileName stringByAppendingPathExtension:kAudioFileExtension];
     NSArray *pathArray = @[dirPath, recordingName];
     NSURL *filePath = [NSURL fileURLWithPathComponents:pathArray];
     //---------Record Audio
