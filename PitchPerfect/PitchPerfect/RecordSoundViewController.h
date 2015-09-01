@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface RecordSoundViewController : UIViewController
 
 - (IBAction)recordAudio:(UIButton *)sender;
 - (IBAction)stopRecord:(UIButton *)sender;

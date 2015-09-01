@@ -6,16 +6,16 @@
 //  Copyright (c) 2015 Kwan. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "RecordSoundViewController.h"
 
-@interface ViewController ()
+@interface RecordSoundViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *recordLabel;
 @property (weak, nonatomic) IBOutlet UIButton *stopButton;
 @property (weak, nonatomic) IBOutlet UIButton *recordButton;
 
 @end
 
-@implementation ViewController
+@implementation RecordSoundViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

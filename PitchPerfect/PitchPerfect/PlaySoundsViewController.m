@@ -69,7 +69,7 @@ static CGFloat const kAudioPlayerStartFromTheBegining = 0.0;
 - (void)playAudioWithSpeedRate:(CGFloat)audioRate
 {
     self.audioPlayer.rate = audioRate;
-    self.audioPlayer.currentTime = kAudioPlayerStartFromTheBegining;
+    self.audioPlayer.currentTime = kAudioPlayerStartFromTheBegining; 
     [self.audioPlayer stop];
     [self.audioPlayer play];
 }

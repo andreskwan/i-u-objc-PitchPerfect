@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		EA354F681B90225500CDA4DE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EA354F671B90225500CDA4DE /* main.m */; };
 		EA354F6B1B90225500CDA4DE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EA354F6A1B90225500CDA4DE /* AppDelegate.m */; };
-		EA354F6E1B90225500CDA4DE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA354F6D1B90225500CDA4DE /* ViewController.m */; };
+		EA354F6E1B90225500CDA4DE /* RecordSoundViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA354F6D1B90225500CDA4DE /* RecordSoundViewController.m */; };
 		EA354F711B90225500CDA4DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA354F6F1B90225500CDA4DE /* Main.storyboard */; };
 		EA354F731B90225500CDA4DE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA354F721B90225500CDA4DE /* Images.xcassets */; };
 		EA354F761B90225500CDA4DE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA354F741B90225500CDA4DE /* LaunchScreen.xib */; };
@@ -34,8 +34,8 @@
 		EA354F671B90225500CDA4DE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EA354F691B90225500CDA4DE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EA354F6A1B90225500CDA4DE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		EA354F6C1B90225500CDA4DE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		EA354F6D1B90225500CDA4DE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		EA354F6C1B90225500CDA4DE /* RecordSoundViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecordSoundViewController.h; sourceTree = "<group>"; };
+		EA354F6D1B90225500CDA4DE /* RecordSoundViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecordSoundViewController.m; sourceTree = "<group>"; };
 		EA354F701B90225500CDA4DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EA354F721B90225500CDA4DE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		EA354F751B90225500CDA4DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -88,8 +88,8 @@
 			children = (
 				EA354F691B90225500CDA4DE /* AppDelegate.h */,
 				EA354F6A1B90225500CDA4DE /* AppDelegate.m */,
-				EA354F6C1B90225500CDA4DE /* ViewController.h */,
-				EA354F6D1B90225500CDA4DE /* ViewController.m */,
+				EA354F6C1B90225500CDA4DE /* RecordSoundViewController.h */,
+				EA354F6D1B90225500CDA4DE /* RecordSoundViewController.m */,
 				EA354F6F1B90225500CDA4DE /* Main.storyboard */,
 				EA354F721B90225500CDA4DE /* Images.xcassets */,
 				EA5286D01B9362860041BEFC /* PlaySoundsViewController.h */,
@@ -228,7 +228,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA354F6E1B90225500CDA4DE /* ViewController.m in Sources */,
+				EA354F6E1B90225500CDA4DE /* RecordSoundViewController.m in Sources */,
 				EA354F6B1B90225500CDA4DE /* AppDelegate.m in Sources */,
 				EA5286D21B9362860041BEFC /* PlaySoundsViewController.m in Sources */,
 				EA354F681B90225500CDA4DE /* main.m in Sources */,
