@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EA08BC231B96AFD200773D77 /* RecordedAudio.m in Sources */ = {isa = PBXBuildFile; fileRef = EA08BC221B96AFD200773D77 /* RecordedAudio.m */; };
 		EA354F681B90225500CDA4DE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EA354F671B90225500CDA4DE /* main.m */; };
 		EA354F6B1B90225500CDA4DE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EA354F6A1B90225500CDA4DE /* AppDelegate.m */; };
 		EA354F6E1B90225500CDA4DE /* RecordSoundViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA354F6D1B90225500CDA4DE /* RecordSoundViewController.m */; };
@@ -29,6 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EA08BC211B96AFD200773D77 /* RecordedAudio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecordedAudio.h; path = PitchPerfect/Model/RecordedAudio.h; sourceTree = "<group>"; };
+		EA08BC221B96AFD200773D77 /* RecordedAudio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RecordedAudio.m; path = PitchPerfect/Model/RecordedAudio.m; sourceTree = "<group>"; };
 		EA354F621B90225500CDA4DE /* PitchPerfect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PitchPerfect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA354F661B90225500CDA4DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA354F671B90225500CDA4DE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -68,6 +71,8 @@
 		EA354F591B90225500CDA4DE = {
 			isa = PBXGroup;
 			children = (
+				EA08BC211B96AFD200773D77 /* RecordedAudio.h */,
+				EA08BC221B96AFD200773D77 /* RecordedAudio.m */,
 				EA354F641B90225500CDA4DE /* PitchPerfect */,
 				EA354F7E1B90225500CDA4DE /* PitchPerfectTests */,
 				EA354F631B90225500CDA4DE /* Products */,
@@ -232,6 +237,7 @@
 				EA354F6B1B90225500CDA4DE /* AppDelegate.m in Sources */,
 				EA5286D21B9362860041BEFC /* PlaySoundsViewController.m in Sources */,
 				EA354F681B90225500CDA4DE /* main.m in Sources */,
+				EA08BC231B96AFD200773D77 /* RecordedAudio.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
