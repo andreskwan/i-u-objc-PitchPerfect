@@ -39,7 +39,7 @@
                                 </state>
                                 <connections>
                                     <action selector="stopRecord:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Rzi-MQ-fRP"/>
-                                    <segue destination="FY7-XN-nz1" kind="show" id="R5G-Zv-cfv"/>
+                                    <segue destination="FY7-XN-nz1" kind="show" identifier="stopRecording" id="R5G-Zv-cfv"/>
                                 </connections>
                             </button>
                         </subviews>
