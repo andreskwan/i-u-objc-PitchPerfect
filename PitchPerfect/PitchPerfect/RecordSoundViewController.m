@@ -53,22 +53,10 @@ static NSString *const kSegueIdentifierForStopRecording = @"stopRecording";
     NSArray *pathArray = @[outputDirPath, recordingName];
     NSURL *outputFilePath = [NSURL fileURLWithPathComponents:pathArray];
 
-    //---------Record Audio
-    /* example of the audio settings dictionary    */
-    //http://www.techotopia.com/index.php/Recording_Audio_on_iOS_7_with_AVAudioRecorder
-//    NSDictionary *recordSettings = [NSDictionary dictionaryWithObjectsAndKeys: [NSNumber numberWithInt:AVAudioQualityMin],
-//                                    AVEncoderAudioQualityKey,
-//                                    [NSNumber numberWithInt:16],
-//                                    AVEncoderBitRateKey,
-//                                    [NSNumber numberWithInt: 2],
-//                                    AVNumberOfChannelsKey,
-//                                    [NSNumber numberWithFloat:44100.0],
-//                                    AVSampleRateKey,
-//                                    nil];
 
     AVAudioSession * audioSession = [AVAudioSession sharedInstance];
     NSError *errorAudioSession = nil;
-//    NSError *errorAudioRecorder = nil;
+
     //should be set before activating the session
     //what means to activate the audio session?
     //what is the category?
@@ -98,7 +86,8 @@ static NSString *const kSegueIdentifierForStopRecording = @"stopRecording";
                           error:&errorAudioSession]) {
         NSLog(@"%@",@"session deactivated");
     }else{
-        NSLog(@"%@",@"session cant be deactivated");
+        NSLog(@"audioSession: %@ %d %@", [errorAudioSession domain], [errorAudioSession code], [[errorAudioSession userInfo] description]);
+        return;
     }
 }
 #pragma mark Segues
