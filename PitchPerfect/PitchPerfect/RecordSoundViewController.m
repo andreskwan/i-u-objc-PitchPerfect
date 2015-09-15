@@ -48,7 +48,7 @@ static NSString *const kSegueIdentifierForStopRecording = @"stopRecording";
     //TODO: Record the user's voice
     //optain the path to the Documents directory
     //---------Path & Name of the file
-    NSString *outputDirPath = [NSSearchPathForDirectoriesInDomains(NSDocumentationDirectory, NSUserDomainMask, YES) firstObject];
+    NSString *outputDirPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
     NSString *recordingName = [kAudioFileName stringByAppendingPathExtension:kAudioFileExtension];
     NSArray *pathArray = @[outputDirPath, recordingName];
     NSURL *outputFilePath = [NSURL fileURLWithPathComponents:pathArray];
@@ -67,7 +67,7 @@ static NSString *const kSegueIdentifierForStopRecording = @"stopRecording";
 //                                    nil];
 
     AVAudioSession * audioSession = [AVAudioSession sharedInstance];
-//    NSError *errorAudioSession = nil;
+    NSError *errorAudioSession = nil;
 //    NSError *errorAudioRecorder = nil;
     //should be set before activating the session
     //what means to activate the audio session?
@@ -75,16 +75,16 @@ static NSString *const kSegueIdentifierForStopRecording = @"stopRecording";
     //what is the mode?
     //are the same?
     if ([audioSession setCategory:AVAudioSessionCategoryPlayAndRecord
-                            error:nil]) {
+                            error:&errorAudioSession]) {
         self.audioRecorder = [[AVAudioRecorder alloc]initWithURL:outputFilePath
                                                         settings:nil
-                                                           error:nil];
-        
+                                                           error:&errorAudioSession];
         self.audioRecorder.delegate = self;
         self.audioRecorder.meteringEnabled = YES;
         [self.audioRecorder record];
-    }else{
-        
+    }else {
+        NSLog(@"audioSession: %@ %d %@", [errorAudioSession domain], [errorAudioSession code], [[errorAudioSession userInfo] description]);
+        return;
     }
 }
 
@@ -113,7 +113,7 @@ static NSString *const kSegueIdentifierForStopRecording = @"stopRecording";
 -(void)audioRecorderDidFinishRecording:(AVAudioRecorder *)recorder
                           successfully:(BOOL)flag
 {
-    if (!flag) {
+    if (flag) {
         //TODO: save the recorded audio
         self.recordedAudio = [RecordedAudio new];
         self.recordedAudio.filePathUrl = recorder.url;
