@@ -8,6 +8,7 @@
 
 #import "RecordSoundViewController.h"
 #import "RecordedAudio.h"
+#import "PlaySoundsViewController.h"
 
 @import AVFoundation;
 
@@ -36,10 +37,16 @@ static NSString *const kSegueIdentifierForStopRecording = @"stopRecording";
     self.recordLabel.hidden = YES;
     self.stopButton.hidden  = YES;
     self.recordButton.enabled = YES;
+    self.view.backgroundColor = [UIColor colorWithRed:18.0/255
+                                                green:129.0/255
+                                                 blue:255.0/255
+                                                alpha:1.0];
+
 }
 
 
 - (IBAction)recordAudio:(UIButton *)sender {
+    self.view.backgroundColor = [UIColor redColor];
     self.recordLabel.hidden = NO;
     self.stopButton.hidden  = NO;
     self.recordButton.enabled = NO;
@@ -71,12 +78,17 @@ static NSString *const kSegueIdentifierForStopRecording = @"stopRecording";
         self.audioRecorder.meteringEnabled = YES;
         [self.audioRecorder record];
     }else {
-        NSLog(@"audioSession: %@ %d %@", [errorAudioSession domain], [errorAudioSession code], [[errorAudioSession userInfo] description]);
+        NSLog(@"audioSession: %@ %ld %@", [errorAudioSession domain], (long)[errorAudioSession code], [[errorAudioSession userInfo] description]);
         return;
     }
 }
 
 - (IBAction)stopRecord:(UIButton *)sender {
+    self.view.backgroundColor = [UIColor colorWithRed:18.0/255
+                                                green:129.0/255
+                                                 blue:255.0/255
+                                                alpha:1.0];
+
     self.recordLabel.hidden = YES;
     [self.audioRecorder stop];
     
@@ -86,15 +98,19 @@ static NSString *const kSegueIdentifierForStopRecording = @"stopRecording";
                           error:&errorAudioSession]) {
         NSLog(@"%@",@"session deactivated");
     }else{
-        NSLog(@"audioSession: %@ %d %@", [errorAudioSession domain], [errorAudioSession code], [[errorAudioSession userInfo] description]);
+        NSLog(@"audioSession: %@ %ld %@", [errorAudioSession domain], (long)[errorAudioSession code], [[errorAudioSession userInfo] description]);
         return;
     }
 }
 #pragma mark Segues
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if (segue.identifier == kSegueIdentifierForStopRecording) {
-        UIViewController *playSoundVC = [segue destinationViewController];
+    if ([segue.identifier isEqualToString:kSegueIdentifierForStopRecording]) {
+        if ([[segue destinationViewController] isKindOfClass:[PlaySoundsViewController class]]) {
+            PlaySoundsViewController *playSoundsVC = [segue destinationViewController];
+            //TODO: turn playSoundsVC into a instance of PlaySoundsViewController
+            playSoundsVC.recordedAudio = sender;
+        }
     }
 }
 
@@ -103,11 +119,11 @@ static NSString *const kSegueIdentifierForStopRecording = @"stopRecording";
                           successfully:(BOOL)flag
 {
     if (flag) {
-        //TODO: save the recorded audio
+        //TODO: step 1 - save the recorded audio
         self.recordedAudio = [RecordedAudio new];
         self.recordedAudio.filePathUrl = recorder.url;
         self.recordedAudio.title = recorder.url.lastPathComponent;
-        //TODO: move  the next scene aka perform segue
+        //TODO: step 2 - move  the next scene aka perform segue
         //sender is the object that actually initiates the segue
         [self performSegueWithIdentifier:kSegueIdentifierForStopRecording
                                   sender:self.recordedAudio];

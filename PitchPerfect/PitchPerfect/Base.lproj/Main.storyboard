@@ -39,11 +39,10 @@
                                 </state>
                                 <connections>
                                     <action selector="stopRecord:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Rzi-MQ-fRP"/>
-                                    <segue destination="FY7-XN-nz1" kind="show" identifier="stopRecording" id="R5G-Zv-cfv"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.070588235294117646" green="0.50588235294117645" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="mfh-He-Gv1" firstAttribute="top" secondItem="XfV-nS-ARG" secondAttribute="bottom" id="9tk-od-GUI"/>
                             <constraint firstAttribute="centerX" secondItem="XfV-nS-ARG" secondAttribute="centerX" id="FXE-Yh-FRn"/>
@@ -60,6 +59,7 @@
                         <outlet property="recordButton" destination="XfV-nS-ARG" id="Knq-PF-0mg"/>
                         <outlet property="recordLabel" destination="mfh-He-Gv1" id="yeh-5D-Qkf"/>
                         <outlet property="stopButton" destination="nhR-H2-j0r" id="iwV-Uy-uYO"/>
+                        <segue destination="FY7-XN-nz1" kind="show" identifier="stopRecording" id="y06-Vp-qip"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -106,7 +106,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.070588235294117646" green="0.50588235294117645" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="f0B-b1-ybk" firstAttribute="centerX" secondItem="mHC-5p-Y8H" secondAttribute="centerX" id="7vy-4e-Neo"/>
                             <constraint firstItem="4Z7-MT-2Oe" firstAttribute="top" secondItem="f0B-b1-ybk" secondAttribute="bottom" constant="63" id="IcX-P8-dM8"/>

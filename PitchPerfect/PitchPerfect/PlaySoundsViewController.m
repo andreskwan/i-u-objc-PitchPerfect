@@ -7,6 +7,7 @@
 //
 
 #import "PlaySoundsViewController.h"
+
 @import AVFoundation;
 
 
@@ -17,6 +18,7 @@ static CGFloat const kAudioPlayerStartFromTheBegining = 0.0;
 
 @interface PlaySoundsViewController ()
 @property (nonatomic, strong) AVAudioPlayer *audioPlayer;
+
 @end
 
 @implementation PlaySoundsViewController
@@ -48,9 +50,9 @@ static CGFloat const kAudioPlayerStartFromTheBegining = 0.0;
 #pragma mark AVAudio logic
 - (void)configureAudioToPlay
 {
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"movie_quote"
-                                                     ofType:@"mp3"];
-    NSURL *urlPath = [NSURL fileURLWithPath:path];
+//    NSString *path = [[NSBundle mainBundle] pathForResource:@"movie_quote"
+//                                                     ofType:@"mp3"];
+    NSURL *urlPath = self.recordedAudio.filePathUrl;
     NSError *error;
     //TODO: identify why it is nil
     self.audioPlayer = [[AVAudioPlayer alloc]initWithContentsOfURL:urlPath

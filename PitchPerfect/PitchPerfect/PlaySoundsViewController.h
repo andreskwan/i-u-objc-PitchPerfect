@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RecordedAudio.h"
 
 @interface PlaySoundsViewController : UIViewController
+@property (nonatomic, strong) RecordedAudio *recordedAudio;
+
 - (IBAction)playSlowButton:(UIButton *)sender;
 - (IBAction)playFastButton:(UIButton *)sender;
 - (IBAction)stopButton:(UIButton *)sender;
