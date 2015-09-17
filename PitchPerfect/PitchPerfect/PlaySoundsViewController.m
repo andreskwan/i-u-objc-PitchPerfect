@@ -18,7 +18,8 @@ static CGFloat const kAudioPlayerStartFromTheBegining = 0.0;
 
 @interface PlaySoundsViewController ()
 @property (nonatomic, strong) AVAudioPlayer *audioPlayer;
-
+@property (nonatomic, strong) AVAudioEngine *audioEngine;
+@property (nonatomic, strong) AVAudioFile *audioFile;
 @end
 
 @implementation PlaySoundsViewController
@@ -27,6 +28,9 @@ static CGFloat const kAudioPlayerStartFromTheBegining = 0.0;
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self configureAudioToPlay];
+    self.audioEngine = [AVAudioEngine new];
+    self.audioFile = [[AVAudioFile alloc]initForReading:self.recordedAudio.filePathUrl
+                                                  error:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,11 +51,14 @@ static CGFloat const kAudioPlayerStartFromTheBegining = 0.0;
     [self.audioPlayer stop];
 }
 
+- (IBAction)playChipmunkAudio:(UIButton *)sender {
+    [self playAudioWithEffect:EAudioEffectPitch
+                  effectValue:@1000.0];
+}
+
 #pragma mark AVAudio logic
 - (void)configureAudioToPlay
 {
-//    NSString *path = [[NSBundle mainBundle] pathForResource:@"movie_quote"
-//                                                     ofType:@"mp3"];
     NSURL *urlPath = self.recordedAudio.filePathUrl;
     NSError *error;
     //TODO: identify why it is nil
@@ -65,6 +72,7 @@ static CGFloat const kAudioPlayerStartFromTheBegining = 0.0;
         
     }else{
         //TODO: handle error
+        
     }
 }
 
@@ -76,14 +84,55 @@ static CGFloat const kAudioPlayerStartFromTheBegining = 0.0;
     [self.audioPlayer play];
 }
 
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
+#pragma mark Audio Effects
+-(void)playAudioWithEffect:(EAudioEffect)audioEffect
+               effectValue:(NSNumber*)effectValue
+{
+    [self.audioPlayer stop];
+    [self.audioEngine stop];
+    [self.audioEngine reset];
+    AVAudioSession *audioSession = [AVAudioSession sharedInstance];
+    if ([audioSession setCategory:AVAudioSessionCategoryPlayback error:nil]) {
+        switch (audioEffect) {
+            case EAudioEffectPitch:
+                [self playAudioWithVariablePitch:effectValue];
+                break;
+                
+            default:
+                break;
+        }
+    } else {
+        
+    }
+}
+-(void)playAudioWithVariablePitch:(NSNumber*)pitch
+{
+    //TDOO: Handle errors
+    NSError *audioEngineError = nil;
+    //TODO: this two lines are repeated code should be replaced for a function
+    AVAudioPlayerNode *audioPlayerNode = [AVAudioPlayerNode new];
+    [self.audioEngine attachNode:audioPlayerNode];
+    
+    AVAudioUnitTimePitch *timePitchEffect = [AVAudioUnitTimePitch new];
+    [self.audioEngine attachNode:timePitchEffect];
+    
+    timePitchEffect.pitch = [pitch floatValue];
+    
+    [self.audioEngine connect:audioPlayerNode
+                           to:timePitchEffect
+                       format:nil];
+    [self.audioEngine connect:timePitchEffect
+                           to:self.audioEngine.outputNode
+                       format:nil];
+    
+    [audioPlayerNode scheduleFile:self.audioFile
+                           atTime:nil
+                completionHandler:nil];
+    [self.audioEngine startAndReturnError:&audioEngineError];
+    if (audioEngineError) {
+        NSLog(@"%@",@"pero que es esto che!!!");
+    }
+    [self.audioPlayer play];
+}
 
 @end
