@@ -29,8 +29,13 @@ static CGFloat const kAudioPlayerStartFromTheBegining = 0.0;
     // Do any additional setup after loading the view.
     [self configureAudioToPlay];
     self.audioEngine = [AVAudioEngine new];
+    //used to decode
     self.audioFile = [[AVAudioFile alloc]initForReading:self.recordedAudio.filePathUrl
                                                   error:nil];
+    NSLog(@"File URL:          %@\n", self.recordedAudio.filePathUrl.absoluteString);
+    NSLog(@"File format:       %@\n", self.audioFile.fileFormat.description);
+    NSLog(@"Processing format: %@\n", self.audioFile.processingFormat.description);
+    NSLog(@"File lenght: %.3f seconds \n", self.audioFile.length / self.audioFile.fileFormat.sampleRate);
 }
 
 - (void)didReceiveMemoryWarning {
