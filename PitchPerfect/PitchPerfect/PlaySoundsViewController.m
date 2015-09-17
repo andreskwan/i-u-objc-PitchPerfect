@@ -132,7 +132,7 @@ static CGFloat const kAudioPlayerStartFromTheBegining = 0.0;
     if (audioEngineError) {
         NSLog(@"%@",@"pero que es esto che!!!");
     }
-    [self.audioPlayer play];
+    [audioPlayerNode play];
 }
 
 @end
