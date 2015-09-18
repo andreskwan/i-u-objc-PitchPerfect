@@ -102,9 +102,6 @@ static CGFloat const kAudioPlayerStartFromTheBegining = 0.0;
             case EAudioEffectPitch:
                 [self playAudioWithVariablePitch:effectValue];
                 break;
-                
-            default:
-                break;
         }
     } else {
         
